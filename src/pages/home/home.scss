@@ -1,0 +1,56 @@
+.nav{
+    // background-color:purple;
+    padding: 0px;
+    width: 100%;
+
+}
+
+.ion-segment-button{
+    color: purple !important;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ion-content{
+    position: absolute;
+    background-color: rgb(238, 202, 238) !important;
+    box-sizing: border-box;
+    border: 9px solid purple;
+}
+ion-title{
+    text-align: center;
+}
+
+ .btn-group button {
+    background-color: purple; /* Green background */
+    border: 2px solid thistle; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+// 
+.btn-group button:hover {
+    background-color:purple;
+}
+// .w3-bar-item {
+//     background-color:plum;
+// }
+// .w4-bar-item{
+//     background-color:palevioletred;
+// }
+// .w5-bar-item{
+//     background-color:violet;
+// }

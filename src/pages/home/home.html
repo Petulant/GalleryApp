@@ -1,0 +1,70 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="pu">
+    <ion-title>Gallery</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="nav">
+    <div padding>
+<ion-segment [(ngModel)]="galleryType" color="purple">
+  <ion-segment-button value="Pics" (click)="dispaly()">Pictures</ion-segment-button>
+  <ion-segment-button value="Vid" (click)="displayVideo()">Videos</ion-segment-button>
+  <ion-segment-button value="Aud" (click)="diplayAudio()">Audio</ion-segment-button>
+
+</ion-segment>
+</div>
+</div>
+ 
+  <div [ngSwitch]="galleryType">
+ 
+      <ion-grid *ngSwitchCase="'Pics'" >
+      <ion-row>
+        <ion-col col-6 col-md-4 col-xl-3 >
+          <img *ngFor="let image of images" src={{image}}  type="image/jpeg">
+        </ion-col>
+      </ion-row>
+      </ion-grid> 
+
+      <ion-grid *ngSwitchCase="'Vid'" >
+          <ion-row> 
+            <ion-col  col-6 col-md-4 col-xl-3  >
+                <video  *ngFor="let video of videos" width="250" height="240"  controls >
+                <source   src="{{video}}" type="video/mp4">
+                </video>
+              </ion-col>
+          </ion-row> 
+          </ion-grid>
+
+
+          <ion-grid *ngSwitchCase="'Aud'" >
+              <ion-row> 
+                <ion-col *ngFor="let audio of audios">
+                    <audio    width="320" height="240"controls>
+                    <source src="{{audio}}" type="audio/ogg">
+                    </audio>
+                  
+                  </ion-col>
+              </ion-row> 
+              </ion-grid>
+            </div>
+
+
+</ion-content>
+<ion-footer>
+    <div class="btn-group"  style="width:100%">
+        <button style="width:33.3%"  class="w3-bar-item" (click)="uploads('camera')"><ion-icon ios="ios-camera" md="md-camera"></ion-icon></button>
+        <button style="width:33.3%" class="w4-bar-item"  (click)="uploads('video')"><ion-icon ios="ios-videocam" md="md-videocam"></ion-icon></button>
+        <button style="width:33.3%" class="w5-bar-item" (click)="uploads('audio')"><ion-icon ios="ios-mic" md="md-mic"></ion-icon></button>
+      </div>
+      
+</ion-footer>
